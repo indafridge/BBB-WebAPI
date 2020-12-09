@@ -14,7 +14,7 @@ public class Customer {
     private String fName;
     private String lName;
     private String emailAddress;
-    
+    //add accounts class
     
     
     public Customer(){
