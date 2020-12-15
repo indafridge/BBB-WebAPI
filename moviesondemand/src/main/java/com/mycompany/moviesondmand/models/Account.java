@@ -28,4 +28,39 @@ public class Account {
             this.password = password;
 
         }
+
+        public int getId(){
+
+            return id;
+        }
+        
+        public void setId(){
+
+            this.id = id;
+        }
+        
+        public String getNickName(){
+        
+            return nickName;                
+        }
+        
+        public void setNickName(){
+
+            this.nickName = nickName;
+        }
+            
+        public String getPassword(){
+
+            return password;
+        }
+
+        public void setPassword(){
+
+            this.password = password;
+        }
+
+
+
+
+        
 }
