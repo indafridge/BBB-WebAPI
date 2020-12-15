@@ -1,1 +1,4 @@
-com/mycompany/moviesondmand/models/Customer.class
+com\mycompany\moviesondmand\services\AccountService.class
+com\mycompany\moviesondmand\resources\AccountResource.class
+com\mycompany\moviesondmand\models\Customer.class
+com\mycompany\moviesondmand\models\Account.class

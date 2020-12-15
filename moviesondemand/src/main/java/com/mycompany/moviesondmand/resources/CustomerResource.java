@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author sandeeppulavazhy
+ * @author group BBB
  */
 
 @Path("/customers")
@@ -38,7 +38,7 @@ public class CustomerResource {
     
     
     
-     @GET
+    @GET
     @Path("/{customerId}")
     @Produces(MediaType.APPLICATION_XML)
     public Customer getCustomerXML(@PathParam("customerId") int id) {
