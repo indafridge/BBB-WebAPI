@@ -35,11 +35,14 @@ public class AccountService {
             init = false;            
         }
 
+        }
+    public List<Account> getAccounts(){
+    return list;
 
     }
 
-    public List<Account> getAccounts(){
-    return list;
+    public Account getAccount(int id) {
+    return list.get(id-1);
     }
 
 }
