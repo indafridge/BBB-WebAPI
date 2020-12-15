@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author sandeeppulavazhy
+ * @author group BBB
  */
 
 @Path("/customers")

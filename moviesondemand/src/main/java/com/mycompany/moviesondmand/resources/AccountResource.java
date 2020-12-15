@@ -42,7 +42,7 @@ public class AccountResource {
     @Path("/{accountId}")
     @Produces(MediaType.APPLICATION_XML)
     public Account getAccountXML(@PathParam("accountId") int id) {
-        return accountService.getAccount(id)
+        return accountService.getAccount(id);
     }
 
     @GET

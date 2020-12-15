@@ -6,7 +6,7 @@
 
 package com.mycompany.moviesondmand.services;
 
-import com.mycompany.movies.ondmand.models.Account;
+import com.mycompany.moviesondmand.models.Account;
 import java.util.ArrayList;
 import java.util.List;
 
