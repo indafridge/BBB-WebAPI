@@ -7,7 +7,7 @@ package com.mycompany.moviesondmand.models;
 
 /**
  *
- * @author sandeep Pulavazhy
+ * @author group BBB
  */
 public class Customer {
     private int id;
