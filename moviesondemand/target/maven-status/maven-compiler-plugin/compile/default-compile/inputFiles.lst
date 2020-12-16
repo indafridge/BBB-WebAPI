@@ -1,6 +1,12 @@
 C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\models\Account.java
+C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\services\MovieService.java
+C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\resources\MovieResource.java
 C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\services\CustomerService.java
+C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\Databases\MovieDatabase.java
+C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\Databases\CustomerDatabase.java
 C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\resources\CustomerResource.java
 C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\models\Customer.java
 C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\services\AccountService.java
+C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\models\Movie.java
+C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\Databases\AccountDatabase.java
 C:\Users\David\Documents\GitHub\BBB-WebAPI\moviesondemand\src\main\java\com\mycompany\moviesondmand\resources\AccountResource.java
