@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -6,6 +6,7 @@
 
 package com.mycompany.moviesondmand.services;
 
+import com.mycompany.moviesondmand.Databases.Database;
 import com.mycompany.moviesondmand.models.Account;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,31 +21,23 @@ public class AccountService {
     public static boolean init = true;
 
 
-    public AccountService(){
-    
-        if (init) {
-            
-            Account c1 = new Account (2, "starDragon14", "PhoneElbowTree1490");
-            Account c2 = new Account (3, "littleSaucerElf7","SmokeSmallTrees93");
-            Account c3 = new Account (4, "FirstManOnUranus", "MartiansRule12IAmSpaceman");
-
-            list.add(c1);
-            list.add(c2);
-            list.add(c3);
-
-            init = false;            
-        }
-
-        }
+   Database d = new Database();
+   private List<Account> accountList = d.getAccountsDB();
+   
     public List<Account> getAccounts(){
-    return list;
+    return accountList;
 
     }
 
     public Account getAccount(int id) {
-    return list.get(id-1);
+        return accountList.get(id-1);
     }
     
-    
-
+    public Account createAccount(Account a){
+        a.setId(accountList.size() + 1);
+        accountList.add(a);
+        System.out.println("Account ID" + String.valueOf(a.getId()));
+        System.out.println("Show movies" +a.printAccount());
+        return a;
+    }
 }

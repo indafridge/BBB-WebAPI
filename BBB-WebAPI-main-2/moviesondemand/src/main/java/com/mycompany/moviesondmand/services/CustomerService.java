@@ -7,8 +7,6 @@ package com.mycompany.moviesondmand.services;
 
 import com.mycompany.moviesondmand.Databases.Database;
 import com.mycompany.moviesondmand.models.Customer;
-import com.mycompany.moviesondmand.models.Customer;
-import com.mycompany.moviesondmand.models.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
