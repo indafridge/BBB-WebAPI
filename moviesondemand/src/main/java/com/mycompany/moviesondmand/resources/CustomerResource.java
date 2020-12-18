@@ -29,7 +29,7 @@ public class CustomerResource {
     
 @GET 
 @Produces(MediaType.APPLICATION_JSON)
-//@Produces(MediaType.APPLICATION_XML)
+
  public List<Customer> getFilteredCustomers(@QueryParam("customer") String fName, @QueryParam("emailAddress") String emailAddress) 
  { 
    if ((fName != null) || (emailAddress != null)) 
@@ -38,21 +38,6 @@ public class CustomerResource {
       } 
     return customerService.getCustomers();    
  }  
-    
-    
-    @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public List<Customer> getCustomersXML() {
-        return customerService.getCustomers();
-    }
-    
-    
-     
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public List<Customer> getCustomersJSON() {
-        return customerService.getCustomers();
-    }
     
     
     
@@ -69,8 +54,8 @@ public class CustomerResource {
     public Customer getCustomerJSON(@PathParam("customerId") int id) {
         return customerService.getCustomer(id);
     }
-    
-    
+
+  
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
@@ -78,18 +63,18 @@ public class CustomerResource {
 	return customerService.createCustomer(c);
     }
     
-    @Path("/{customerID}/accounts")
+    @Path("/{customerId}/accounts")
     public AccountResource getAccountsResource() {
 	System.out.println("Getting accounts subresoruces...");
 	return new AccountResource();
     }
     
-     @Path("/{customerID}/movies")
-    public MovieResource getMovieResource() {
+    @Path("/{customerId}/movies")
+    public MovieResource getMoviesResource() {
 	System.out.println("Getting movies subresoruces...");
 	return new MovieResource();
     }
     
-    
+
     
 }

@@ -24,11 +24,11 @@ public class AccountService {
     private List<Account> accountslist = new Database().getAccountsDB(); 
     
     public List<Account> getAllAccountsByCustomer(int CustomerId) {
-        return customerslist.get(CustomerId-1).getAccounts();
+        return customerslist.get(CustomerId).getAccounts();
     }
     
     public Account getAccountByID(int CustomerId, int AccountId) {
-        return customerslist.get(CustomerId-1).getAccounts().get(AccountId-1);
+        return customerslist.get(CustomerId).getAccounts().get(AccountId);
     }
 
     public List<Account> getAllAccounts() {

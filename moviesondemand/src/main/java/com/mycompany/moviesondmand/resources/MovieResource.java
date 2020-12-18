@@ -15,6 +15,8 @@ import javax.ws.rs.core.MediaType;
  * @author mynde, sandeeppulavazhy
  */
 @Path("/movies")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class MovieResource {
     
     MovieService movieService = new MovieService();
@@ -34,7 +36,7 @@ public class MovieResource {
     //delete Movie
     
     @DELETE
-    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/{movieid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Movie deleteMovie(@PathParam("customerId") int c_id, Movie m) {
 	return movieService.deleteMovie(m, c_id);

@@ -12,11 +12,17 @@ import java.util.*;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
+
+
+
+
 /**
  *
  * @author David , sandeep pulavazhy
  */
 @Path("/accounts")
+@Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class AccountResource {
 
     AccountService accountService = new AccountService();
