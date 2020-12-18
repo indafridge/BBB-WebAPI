@@ -65,9 +65,9 @@ public class MovieService {
         Customer cust = customerslist.get(c_id-1);
         Customer cust2 = customerslist.get(c_id2-1);
         m.setId(cust.getMovies().size() + 1);
-        cust.addMovieToCust(m)
+        cust.addMovieToCust(m);
         m.setId(cust2.getMovies().size()-1);
-        cust2.deleteMovieFromCust(m)
+        cust2.deleteMovieFromCust(m);
 
         System.out.println("201 - resource created with path: /customers/" + String.valueOf(cust.getId())+"/movies/"+String.valueOf(m.getId()));
         System.out.println("Updated Message:"+m.printMovie());
