@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author mynde
+ * @author mynde, sandeeppulavazhy
  */
 @XmlRootElement
 public class Movie {
@@ -70,6 +70,7 @@ public class Movie {
     public void setRecommended(boolean recommended) {
         this.recommended = recommended;
     }
+    
      public String printMovie(){
         String str = this.getId()+this.getSummary()+this.isRecommended()+this.isWatched();
         return str;

@@ -25,12 +25,12 @@ public class Database {
             
             if(init){
                 
-                // manipulatind data for customer class
+                // manipulating data for customer class
                 
-        Customer c1 = new Customer (2, "Sandeep" , "Pulavazhy","x16101251@student.ncirl.ie");
-        Customer c2 = new Customer (3, "David" , "Lyons","x17491304@student.ncirl.ie");
-        Customer c3 = new Customer (4, "Ciaran" , "Byrne","x17367033@student.ncirl.ie");
-        Customer c4 = new Customer (5, "Mindaugas" , "Prismantas","x17489412@student.ncirl.ie");
+        Customer c1 = new Customer (2, "Sandeep" , "Pulavazhy","x16101251@student.ncirl.ie", accountDB,movieDB);
+        Customer c2 = new Customer (3, "David" , "Lyons","x17491304@student.ncirl.ie",accountDB,movieDB);
+        Customer c3 = new Customer (4, "Ciaran" , "Byrne","x17367033@student.ncirl.ie",accountDB,movieDB);
+        Customer c4 = new Customer (5, "Mindaugas" , "Prismantas","x17489412@student.ncirl.ie",accountDB,movieDB);
         
         customerDB.add(c1);
         customerDB.add(c2);
