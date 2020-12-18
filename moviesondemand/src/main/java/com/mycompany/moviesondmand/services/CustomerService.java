@@ -5,7 +5,10 @@
  */
 package com.mycompany.moviesondmand.services;
 
+import com.mycompany.moviesondmand.Databases.Database;
 import com.mycompany.moviesondmand.models.Customer;
+import com.mycompany.moviesondmand.models.Customer;
+import com.mycompany.moviesondmand.models.Movie;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,15 +16,15 @@ import java.util.List;
 
 /**
  *
- * @author group BBB
+ * @author sandeep pulavazhy
  */
 public class CustomerService {
     
     public static List<Customer> list = new ArrayList<>();
-    public static boolean init = true;
+
     
     
-    public CustomerService(){
+   /* public CustomerService(){
     
     if (init){
     
@@ -48,5 +51,26 @@ public class CustomerService {
      
      public Customer getCustomer(int id) {
         return list.get(id-1);
+   }  
+   */
+    
+    Database d = new Database();
+    private List<Customer> customerlist = d.getCustomersDB();
+    
+    public List<Customer> getCustomers() {
+        return customerlist;
+    }
+       public Customer getCustomer(int id) {
+        return customerlist.get(id-1);
     }  
+       public Customer createCustomer(Customer c) {
+	c.setId(customerlist.size() + 1);
+      	customerlist.add(c);
+	System.out.println("201 - resource created with path: /customers/" + String.valueOf(c.getId()));
+        System.out.println("Updated Message:"+c.printCustomer());
+	return c;
+    }
 }
+
+
+    

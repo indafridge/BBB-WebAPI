@@ -6,6 +6,7 @@
 package com.mycompany.moviesondmand.services;
 
 
+import com.mycompany.moviesondmand.Databases.Database;
 import com.mycompany.moviesondmand.models.Movie;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,8 @@ public class MovieService {
     public static boolean init = true;
     
     
-    public MovieService(){
-        if(init){
+   /* public MovieService(){
+           if(init){
             Movie m1 = new Movie(1, "Finding Nemo", "The story of a fish trying to find a fish called Nemo", false, false);
             Movie m2 = new Movie(2, "Finding Dory", "The story of a fish trying to find a fish called Dory", false, false);
             Movie m3 = new Movie(3, "Sniper: Assassin's End", "Man with a sniper rifle trying to stop assassination", true, true);
@@ -41,6 +42,26 @@ public class MovieService {
         
     public Movie getMovie(int id){
         return list.get(id - 1);
-    }
+     
+         
+         
+    }*/
     
+    Database d = new Database();
+    private List<Movie> movielist = d.getMoviesDB();
+    
+    public List<Movie> getMovies() {
+        return movielist;
+    }
+       public Movie getMovie(int id) {
+        return movielist.get(id-1);
+    }  
+       public Movie createMovie(Movie m) {
+	m.setId(movielist.size() + 1);
+      	movielist.add(m);
+	System.out.println("201 - resource created with path: /customers/" + String.valueOf(m.getId()));
+        System.out.println("Updated Message:"+m.printMovie());
+	return m;
+    
+}
 }

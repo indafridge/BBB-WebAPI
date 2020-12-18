@@ -5,10 +5,13 @@
  */
 package com.mycompany.moviesondmand.models;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  *
  * @author mynde
  */
+@XmlRootElement
 public class Movie {
     private int id;
     private String name;
@@ -67,5 +70,9 @@ public class Movie {
     public void setRecommended(boolean recommended) {
         this.recommended = recommended;
     }
-    
+     public String printMovie(){
+        String str = this.getId()+this.getSummary()+this.isRecommended()+this.isWatched();
+        return str;
+    }
+  
 }

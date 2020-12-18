@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author group BBB
+ * @author sandeep pulavazhy
  */
 
 @Path("/customers")
@@ -51,7 +51,6 @@ public class CustomerResource {
     public Customer getCustomerJSON(@PathParam("customerId") int id) {
         return customerService.getCustomer(id);
     }
-
     
     
 }

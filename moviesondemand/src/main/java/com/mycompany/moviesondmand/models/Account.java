@@ -5,11 +5,14 @@
  */
 
 package com.mycompany.moviesondmand.models;
+import javax.xml.bind.annotation.XmlRootElement;
+
 
 /**
  *
  * @author Group BBB
  */
+@XmlRootElement
 public class Account {
     private int id;
     private String nickName;
@@ -59,7 +62,11 @@ public class Account {
             this.password = password;
         }
 
-
+        public String printAccount(){
+            
+            String str = this.getId()+ this.getNickName()+this.getPassword();
+            return str;
+        }
 
 
         
