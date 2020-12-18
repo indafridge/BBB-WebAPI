@@ -25,6 +25,7 @@ public class MovieResource {
     }
 	
     @POST
+    @Path("/postMovie")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Movie postMovie(@PathParam("customerId") int c_id, Movie m) {
@@ -34,6 +35,7 @@ public class MovieResource {
     //delete Movie
     
     @DELETE
+    @Path("/deleteMovie")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Movie deleteMovie(@PathParam("customerId") int c_id, Movie m) {

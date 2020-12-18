@@ -23,6 +23,7 @@ public class AccountResource {
 
     	
     @GET
+    @Path("/")
     public List<Account> getAccounts(@PathParam("customerId") int c_id) {
         System.out.println("getAllAccountsForCustomer"+c_id);
 	return accountService.getAllAccountsByCustomer(c_id);

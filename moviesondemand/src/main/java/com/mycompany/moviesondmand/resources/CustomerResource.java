@@ -46,15 +46,12 @@ public class CustomerResource {
         return customerService.getCustomers();
     }
     
-    
-     
     @GET
+    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Customer> getCustomersJSON() {
         return customerService.getCustomers();
     }
-    
-    
     
     @GET
     @Path("/{customerId}")
