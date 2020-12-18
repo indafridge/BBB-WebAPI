@@ -4,17 +4,19 @@
  * and open the template in the editor.
  */
 package com.mycompany.moviesondmand.models;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author group BBB
+ * @author sandeep pulavazhy
  */
+@XmlRootElement
 public class Customer {
     private int id;
     private String fName;
     private String lName;
     private String emailAddress;
-    //add accounts class
+  
     
     
     public Customer(){
@@ -67,7 +69,13 @@ public class Customer {
        
        this.emailAddress = emailAddress;
        }
-    
+       
+       
+       
+    public String printCustomer(){
+        String str = this.getId()+ this.getFName()+this.getLName()+this.getEmailAddress();
+        return str;
+    }
   
         
 }

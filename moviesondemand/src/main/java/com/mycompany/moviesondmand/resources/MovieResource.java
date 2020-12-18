@@ -21,14 +21,14 @@ public class MovieResource {
     
     @GET
     @Produces(MediaType.APPLICATION_XML)
-    public List<Movie> getMovieXML(){
-        return movieService.getMovie();
+    public List<Movie> getMoviesXML(){
+        return movieService.getMovies();
     }
     
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Movie> getMovieJSON(){
-        return movieService.getMovie();
+    public List<Movie> getMoviesJSON(){
+        return movieService.getMovies();
     }
     
     @GET
