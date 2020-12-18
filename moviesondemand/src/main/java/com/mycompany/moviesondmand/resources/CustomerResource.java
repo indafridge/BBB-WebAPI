@@ -22,6 +22,24 @@ public class CustomerResource {
     CustomerService customerService = new CustomerService();
     
     
+    
+    
+    
+    
+    
+@GET 
+@Produces(MediaType.APPLICATION_JSON)
+//@Produces(MediaType.APPLICATION_XML)
+ public List<Customer> getFilteredCustomers(@QueryParam("customer") String fName, @QueryParam("emailAddress") String emailAddress) 
+ { 
+   if ((fName != null) || (emailAddress != null)) 
+      {        
+          return customerService.getSearchCustomers(fName, emailAddress); 
+      } 
+    return customerService.getCustomers();    
+ }  
+    
+    
     @GET
     @Produces(MediaType.APPLICATION_XML)
     public List<Customer> getCustomersXML() {
@@ -51,6 +69,27 @@ public class CustomerResource {
     public Customer getCustomerJSON(@PathParam("customerId") int id) {
         return customerService.getCustomer(id);
     }
+    
+    
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Customer postCustomer(Customer c) {
+	return customerService.createCustomer(c);
+    }
+    
+    @Path("/{customerID}/accounts")
+    public AccountResource getAccountsResource() {
+	System.out.println("Getting accounts subresoruces...");
+	return new AccountResource();
+    }
+    
+     @Path("/{customerID}/movies")
+    public MovieResource getMovieResource() {
+	System.out.println("Getting movies subresoruces...");
+	return new MovieResource();
+    }
+    
     
     
 }

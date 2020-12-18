@@ -12,36 +12,39 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 /**
  *
- * @author mynde
+ * @author mynde, sandeeppulavazhy
  */
 @Path("/movies")
 public class MovieResource {
     
     MovieService movieService = new MovieService();
-    
-    @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public List<Movie> getMoviesXML(){
-        return movieService.getMovies();
+     @GET
+    public List<Movie> getMovies(@PathParam("customerId") int c_id) {
+        System.out.println("getAllMoviesForCustomer"+c_id);
+	return movieService.getAllMoviesByCustomer(c_id);
     }
-    
-    @GET
+	
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Movie> getMoviesJSON(){
-        return movieService.getMovies();
+    public Movie postMovie(@PathParam("customerId") int c_id, Movie m) {
+	return movieService.createMovie(m, c_id);
     }
+    
+    //delete Movie
+    
+    @DELETE
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Movie deleteMovie(@PathParam("customerId") int c_id, Movie m) {
+	return movieService.deleteMovie(m, c_id);
+    }
+    
     
     @GET
     @Path("/{movieId}")
-    @Produces(MediaType.APPLICATION_XML)
-    public Movie getMovieXML(@PathParam("movieId") int id){
-        return movieService.getMovie(id);
-    }
-    
-    @GET
-    @Path("/{movieId}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Movie getMovieJSON(@PathParam("movieId") int id){
-        return movieService.getMovie(id);
+    public Movie getMovie(@PathParam("movieId") int m_id,@PathParam("customerId") int c_id ) {
+    	System.out.println("getMoviesByID..."+m_id +" for CustomerId "+c_id);
+	return movieService.getMovieByID(m_id,c_id);
     }
 }

@@ -14,43 +14,30 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author David
+ * @author David , sandeep pulavazhy
  */
-@Path("/Accounts")
+@Path("/accounts")
 public class AccountResource {
 
     AccountService accountService = new AccountService();
 
-
-
+    	
     @GET
-    @Produces(MediaType.APPLICATION_XML)
-    public List<Account> getAccountsXML() {
-        return accountService.getAccounts();
+    public List<Account> getAccounts(@PathParam("customerId") int c_id) {
+        System.out.println("getAllAccountsForCustomer"+c_id);
+	return accountService.getAllAccountsByCustomer(c_id);
     }
-
-
-
-    @GET
+	
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Account> getAccountsJSON() {
-        return accountService.getAccounts();
+    public Account postAccount(@PathParam("customerId") int c_id, Account a) {
+	return accountService.createAccount(a, c_id);
     }
-
-    
     @GET
     @Path("/{accountId}")
-    @Produces(MediaType.APPLICATION_XML)
-    public Account getAccountXML(@PathParam("accountId") int id) {
-        return accountService.getAccount(id);
+    public Account getAccount(@PathParam("accountId") int a_id,@PathParam("customerId") int c_id ) {
+    	System.out.println("getAccountByID..."+a_id +" for CustomerId "+c_id);
+	return accountService.getAccountByID(a_id,c_id);
     }
-
-    @GET
-    @Path("/{accountId}")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Account getAccountJSON(@PathParam("accountId") int id) {
-        return accountService.getAccount(id);
-    }
-
-
 }
