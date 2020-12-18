@@ -3,3 +3,4 @@ BBB-WebAPI-main-2/moviesondemand/target/classes/com/mycompany/moviesondmand/Data
 *.lst
 *.class
 *.jar
+*.class
